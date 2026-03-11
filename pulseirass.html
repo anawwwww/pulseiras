@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pulseiras</title>
+
+<link rel="stylesheet" href="styly.css">
+
+</head>
+<body>
+
+<div id="telaInicial">
+
+<h2>Escolha sua pulseira</h2>
+
+<div class="opcoes">
+
+<div class="box" onclick="selecionar('Pulseira simples',5)">
+Pulseira simples<br>R$5,00
+</div>
+
+<div class="box" onclick="selecionar('Pulseira uma pérola',5.5)">
+Pulseira uma pérola<br>R$5,50
+</div>
+
+<div class="box" onclick="selecionar('Pulseira com pérolas',5)">
+Pulseira com pérolas<br>R$5,00
+</div>
+
+<div class="box" onclick="selecionar('Pulseira miçanga',6.5)">
+Pulseira miçanga<br>R$6,50
+</div>
+
+<div class="box" onclick="selecionar('Pulseira olho grego',7)">
+Pulseira olho grego<br>R$7,00
+</div>
+
+<div class="box" onclick="selecionar('Pulseira personalizada',7.5)">
+Pulseira personalizada<br>R$7,50
+</div>
+
+</div>
+</div>
+
+<div id="editor" style="display:none;">
+
+<div class="container">
+
+<div class="formulario">
+
+<h3>Personalizar</h3>
+
+<button onclick="voltar()">← Voltar</button>
+
+<label>Cor:</label>
+<select id="cor" onchange="mudarCor(); gerarPulseira()">
+<option value="holografico">Holográfico</option>
+<option value="amarelo">Amarelo</option>
+<option value="laranja">Laranja</option>
+<option value="vermelho">Vermelho</option>
+<option value="verde">Verde</option>
+<option value="verdeagua">Verde-Água</option>
+<option value="azul">Azul</option>
+<option value="roxo">Roxo</option>
+<option value="rosa">Rosa</option>
+<option value="marrom">Marrom</option>
+<option value="branco">Branco</option>
+<option value="pretoBrilho">Preto (Brilhante)</option>
+<option value="pretoFosco">Preto (Fosco)</option>
+
+
+
+
+</select>
+
+<div id="perolasDiv" style="display:none;">
+
+<label>Quantidade de pérolas:</label>
+<input type="number" id="perolas" min="1" max="6" value="0" oninput="gerarPulseira()">
+<p id="infoPerolas" class="info"></p>
+
+</div>
+
+<div id="olhosDiv" style="display:none;">
+
+<label>Quantidade de olhos gregos:</label>
+<input type="number" id="olhos" min="1" max="3" value="1" oninput="gerarPulseira()">
+<p id="infoOlhos" class="info"></p>
+
+</div>
+
+<label>charme:</label>
+<div id="charmeDiv" style="display:none;">
+
+<select id="charme" onchange="gerarPulseira()">
+
+<option value="">Nenhum</option>
+<option value="letras">Letras</option>
+<option value="coracao">Coração</option>
+<option value="cruz">Cruz</option>
+<option value="caveira">Caveira</option>
+<option value="hello">Hello Kitty</option>
+<option value="urso">Urso</option>
+<option value="estrela">Estrela</option>
+
+</select>
+
+
+
+<div id="letraDiv" style="display:none;">
+
+<label>Letra:</label>
+<input type="text" id="letraInput" maxlength="1" oninput="gerarPulseira()">
+
+</div>
+
+</div>
+
+<br><br>
+
+<label>Quantidade:</label>
+<input type="number" id="quantidade" value="1" min="1" oninput="validarQuantidade()">
+
+<br><br>
+
+<label>Nome:</label>
+<input type="text" id="nome">
+
+<br><br>
+
+<label>WhatsApp ou Instagram:</label>
+<input type="text" id="contato">
+
+<br><br>
+
+<label>Forma de pagamento:</label>
+
+<select id="pagamento">
+
+<option value="">Selecione</option>
+<option value="Pix">Pix</option>
+<option value="Cartão">Cartão</option>
+<option value="Dinheiro">Dinheiro</option>
+
+</select>
+
+
+<br><br>
+
+<button onclick="finalizar()">Finalizar</button>
+
+</div>
+
+<div class="preview">
+
+<h3>Visualização</h3>
+
+<div id="pulseiraPreview">
+<div id="pulseira"></div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+<div id="caixaResumo" class="popup">
+
+<div class="popupBox">
+
+<h2>Resumo do Pedido</h2>
+
+<div id="textoResumo"></div>
+
+<div class="botoesResumo">
+
+<button onclick="confirmarCompra()">Finalizar compra</button>
+
+<button onclick="escolherOutra()">Escolher outra pulseira</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="scriptt.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+emailjs.init("ZOyUMse8YaIdz1vay");
+})();
+</script>
+
+</body>
+</html>
