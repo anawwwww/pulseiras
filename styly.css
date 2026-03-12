@@ -43,7 +43,7 @@ gap:15px;
 }
 
 .box{
-background:#4c8cff;
+background:#ff94db;
 color:white;
 padding:14px;
 border-radius:10px;
@@ -63,7 +63,7 @@ transition:0.2s;
 }
 
 .box:hover{
-background:#3b75d8;
+background:#ff94db;
 transform:scale(1.02);
 }
 /* EDITOR */
@@ -168,7 +168,7 @@ transition:0.3s;
 .formulario input:focus,
 .formulario select:focus{
 
-border-bottom:2px solid #3b75d8;
+border-bottom:2px solid #ff94db;
 
 }
 
@@ -180,7 +180,7 @@ border-bottom:2px solid #3b75d8;
 margin-top:15px;
 padding:12px;
 border:none;
-background:#4c8cff;
+background:#ff94db;
 color:white;
 border-radius:8px;
 cursor:pointer;
@@ -191,7 +191,7 @@ transition:0.3s;
 
 .formulario button:hover{
 
-background:#3b75d8;
+background:#ff94db;
 
 }
 
